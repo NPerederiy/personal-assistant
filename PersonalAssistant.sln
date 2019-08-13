@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{786D586E-E683-49CD-8531-0D25464D5F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TelegramBot", "TelegramBot\TelegramBot.csproj", "{786D586E-E683-49CD-8531-0D25464D5F0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChatBots", "ChatBots", "{305769EC-9557-4648-A6AA-FB0D4436DCCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{0C72D77B-9571-41A8-9DD6-23BA20B29C4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FinancialControl", "FinancialControl", "{A50DE537-35F0-4EA9-BA3E-539A2E157556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialControl.DAL", "FinancialControl.DAL\FinancialControl.DAL.csproj", "{25085C95-02D9-451A-AA6B-5BFD76EBB9F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialControl.BL", "FinancialControl.BL\FinancialControl.BL.csproj", "{E2039DA9-C427-4C55-A499-33E0B5B9E059}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialControl.API", "FinancialControl.API\FinancialControl.API.csproj", "{BC733DEB-F910-4A32-BEC6-954902DAA6B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +27,28 @@ Global
 		{786D586E-E683-49CD-8531-0D25464D5F0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{786D586E-E683-49CD-8531-0D25464D5F0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{786D586E-E683-49CD-8531-0D25464D5F0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25085C95-02D9-451A-AA6B-5BFD76EBB9F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25085C95-02D9-451A-AA6B-5BFD76EBB9F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25085C95-02D9-451A-AA6B-5BFD76EBB9F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25085C95-02D9-451A-AA6B-5BFD76EBB9F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2039DA9-C427-4C55-A499-33E0B5B9E059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2039DA9-C427-4C55-A499-33E0B5B9E059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2039DA9-C427-4C55-A499-33E0B5B9E059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2039DA9-C427-4C55-A499-33E0B5B9E059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC733DEB-F910-4A32-BEC6-954902DAA6B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC733DEB-F910-4A32-BEC6-954902DAA6B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC733DEB-F910-4A32-BEC6-954902DAA6B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC733DEB-F910-4A32-BEC6-954902DAA6B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{786D586E-E683-49CD-8531-0D25464D5F0C} = {305769EC-9557-4648-A6AA-FB0D4436DCCC}
+		{A50DE537-35F0-4EA9-BA3E-539A2E157556} = {0C72D77B-9571-41A8-9DD6-23BA20B29C4A}
+		{25085C95-02D9-451A-AA6B-5BFD76EBB9F1} = {A50DE537-35F0-4EA9-BA3E-539A2E157556}
+		{E2039DA9-C427-4C55-A499-33E0B5B9E059} = {A50DE537-35F0-4EA9-BA3E-539A2E157556}
+		{BC733DEB-F910-4A32-BEC6-954902DAA6B3} = {A50DE537-35F0-4EA9-BA3E-539A2E157556}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AD86DF85-0D98-4D95-BC9B-45498F2EFE91}
