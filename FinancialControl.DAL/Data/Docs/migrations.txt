@@ -1,0 +1,3 @@
+﻿add-migration InitialFinancialControlDbMigration -c FinancialControlDbContext -o Data/Migrations/FinancialControlDb
+
+update-database ...
