@@ -10,8 +10,6 @@ namespace FinancialControl.DAL.Entities
 
         public string CurrencyCode { get; set; }
         public virtual Currency Currency { get; set; }
-
-        public virtual Group Group { get; set; }
         public virtual Category Category { get; set; }
     }
 }

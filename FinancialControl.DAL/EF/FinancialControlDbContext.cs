@@ -30,7 +30,6 @@ namespace FinancialControl.DAL.EF
 
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Operation> Operations { get; set; }
-        public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
     }
 }

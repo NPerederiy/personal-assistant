@@ -8,13 +8,13 @@ namespace FinancialControl.DAL.Entities
         public Guid Id { get; set; }
         public string Name { get; set; }
 
-        public virtual User User { get; set; }
-        public virtual IEnumerable<Group> Groups { get; set; }
+        public virtual Category ParentCategory { get; set; }
+        public virtual IEnumerable<Category> Subcategories { get; set; }
         public virtual IEnumerable<Operation> Operations { get; set; }
 
         public Category()
         {
-            Groups = new List<Group>();
+            Subcategories = new List<Category>();
             Operations = new List<Operation>();
         }
     }

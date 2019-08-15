@@ -10,10 +10,6 @@ namespace FinancialControl.DAL.EF
             modelBuilder.Entity<User>(b =>
             {
                 b.HasKey(u => u.Id);
-
-                b.HasMany(u => u.Categories)
-                 .WithOne(c => c.User)
-                 .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Category>(b =>
@@ -23,24 +19,12 @@ namespace FinancialControl.DAL.EF
                 b.Property(c => c.Name)
                  .IsRequired();
 
-                b.HasMany(c => c.Groups)
-                 .WithOne(g => g.Category)
+                b.HasMany(c => c.Subcategories)
+                 .WithOne(c => c.ParentCategory)
                  .OnDelete(DeleteBehavior.Restrict);
 
                 b.HasMany(c => c.Operations)
                  .WithOne(o => o.Category)
-                 .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            modelBuilder.Entity<Group>(b =>
-            {
-                b.HasKey(g => g.Id);
-
-                b.Property(g => g.Name)
-                 .IsRequired();
-
-                b.HasMany(g => g.Operations)
-                 .WithOne(o => o.Group)
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
@@ -75,7 +59,6 @@ namespace FinancialControl.DAL.EF
                  .WithOne(o => o.Currency)
                  .HasForeignKey(o => o.CurrencyCode)
                  .OnDelete(DeleteBehavior.SetNull);
-                 
             });
         }
 
