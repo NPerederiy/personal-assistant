@@ -8,6 +8,7 @@ namespace FinancialControl.BL.Services.Abstractions
     {
         Task<UserBO> AddUserAsync(Guid id);
         Task DeleteUserAsync(Guid id);
-        Task<CategoryBO> GetCategoryTreeRootAsync(Guid userId);
+        //void RequestConfirmationToken();              -- TODO: Implement
+        //bool ValidateConfirmationToken(string token); -- TODO: Implement
     }
 }

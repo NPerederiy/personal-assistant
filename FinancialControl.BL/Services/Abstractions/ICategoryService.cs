@@ -7,11 +7,12 @@ namespace FinancialControl.BL.Services.Abstractions
 {
     public interface ICategoryService
     {
-        IEnumerable<CategoryBO> GetAll();
+        Task<IEnumerable<CategoryBO>> GetAll(Guid userId);
         Task<CategoryBO> GetByIdAsync(Guid id);
-        Task<CategoryBO> CreateAsync(string name, CategoryBO parentCategory = null);
-        Task UpdateAsync(CategoryBO entity);
+        Task<CategoryBO> CreateAsync(string name, Guid? parentCategoryId = null);
+        Task RenameAsync(Guid id, string name);
         Task DeleteAsync(Guid id);
-        decimal GetCostsByCurrencyAsync(CategoryBO category, string currencyCode);
+        Task<decimal> GetCostsByCurrencyAsync(Guid categoryId, string currencyCode);
+        Task<CategoryBO> GetCategoryTreeRootAsync(Guid userId);
     }
 }

@@ -50,11 +50,5 @@ namespace FinancialControl.BL.Services.Implementations
             await _categoryService.DeleteAsync(user.RootCategoryId);
             await _uow.UserRepository.DeleteAsync(user);
         }
-
-        public async Task<CategoryBO> GetCategoryTreeRootAsync(Guid userId)
-        {
-            var entity = (await _uow.UserRepository.GetByConditionAsync(x => x.Id == userId)).FirstOrDefault();
-            return entity != null ? await _categoryService.GetByIdAsync(entity.RootCategoryId) : null;
-        }
     }
 }

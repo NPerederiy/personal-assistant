@@ -27,15 +27,11 @@ namespace FinancialControl.BL.Services.Implementations
             _categoryService = categoryService;
         }
 
-        public IEnumerable<OperationBO> GetAll()
+        public async Task<IEnumerable<OperationBO>> GetAll(Guid categoryId)
         {
-            var entities = _uow.OperationRepository.GetAll().ToList();
-            var list = new List<OperationBO>();
+            var category = await _categoryService.GetByIdAsync(categoryId);
 
-            foreach (var entity in entities)
-                list.Add(_mapper.Map<OperationBO>(entity));
-
-            return list;
+            return category?.Operations;
         }
 
         public async Task<OperationBO> GetByIdAsync(Guid id)
@@ -60,12 +56,12 @@ namespace FinancialControl.BL.Services.Implementations
             await _uow.CategoryRepository.UpdateAsync(entity);
         }
 
-        public async Task UpdateAsync(OperationBO operation)
+        public async Task RenameAsync(Guid id, string name)
         {
-            var entity = (await _uow.OperationRepository.GetByConditionAsync(x => x.Id == operation.Id)).FirstOrDefault();
+            var entity = (await _uow.OperationRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();
             if (entity != null)
             {
-                entity = _mapper.Map<Operation>(operation);
+                entity.Name = name;
                 await _uow.OperationRepository.UpdateAsync(entity);
             }
         }

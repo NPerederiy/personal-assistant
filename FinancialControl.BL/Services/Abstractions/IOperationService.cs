@@ -7,10 +7,10 @@ namespace FinancialControl.BL.Services.Abstractions
 {
     public interface IOperationService
     {
-        IEnumerable<OperationBO> GetAll();
+        Task<IEnumerable<OperationBO>> GetAll(Guid categoryId);
         Task<OperationBO> GetByIdAsync(Guid id);
         Task CreateAsync(string name, decimal cost, string currencyCode, Guid categoryId);
-        Task UpdateAsync(OperationBO entity);
+        Task RenameAsync(Guid id, string name);
         Task DeleteAsync(Guid id);
     }
 }
