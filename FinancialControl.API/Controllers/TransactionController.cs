@@ -41,7 +41,7 @@ namespace FinancialControl.API.Controllers
         {
             if (!ModelState.IsValid || !Guid.TryParse(model.CategoryId, out Guid guid)) return BadRequest();
 
-            /*var x = */await _transactionService.CreateAsync(model.Name, model.Cost, model.CurrencyCode, guid);
+            /*var x = */await _transactionService.CreateAsync(model.Name, model.Cost, model.CurrencyCode, model.CommitedAt, model.Tags, guid);
 
             /*if (x != null)*/ return Ok();
             //else return BadRequest();

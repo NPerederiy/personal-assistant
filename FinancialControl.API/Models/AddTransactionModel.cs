@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FinancialControl.API.Models
@@ -21,8 +22,12 @@ namespace FinancialControl.API.Models
         [JsonProperty("currencyCode")]
         public string CurrencyCode { get; set; }
 
-        //public string Time { get; set; }   -- TODO: Implement
+        [Required]
+        [JsonProperty("commitedAt")]
+        public DateTime CommitedAt { get; set; }
 
-        //public string[] Tags { get; set; }   -- TODO: Implement
+        [Required]
+        [JsonProperty("tags")]
+        public string[] Tags { get; set; }
     }
 }

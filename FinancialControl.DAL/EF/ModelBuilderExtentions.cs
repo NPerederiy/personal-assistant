@@ -38,6 +38,18 @@ namespace FinancialControl.DAL.EF
                 b.Property(o => o.Cost)
                  .HasColumnType("decimal(18, 2)")
                  .IsRequired();
+
+                b.Property(o => o.CommitedAt)
+                 .HasColumnType("datetime2")
+                 .IsRequired();
+
+                b.Property(o => o.CreatedAt)
+                 .HasColumnType("datetime2")
+                 .IsRequired();
+
+                b.Property(o => o.UpdatedAt)
+                 .HasColumnType("datetime2")
+                 .IsRequired();
             });
 
             modelBuilder.Entity<Currency>(b =>
@@ -75,11 +87,13 @@ namespace FinancialControl.DAL.EF
 
                 b.HasOne(t => t.Tag)
                  .WithMany(t => t.TransactionTags)
-                 .HasForeignKey(t => t.TagId);
+                 .HasForeignKey(t => t.TagId)
+                 .OnDelete(DeleteBehavior.Cascade);
 
                 b.HasOne(t => t.Transaction)
                  .WithMany(t => t.TransactionTags)
-                 .HasForeignKey(t => t.TransactionId);
+                 .HasForeignKey(t => t.TransactionId)
+                 .OnDelete(DeleteBehavior.Cascade);
             });
         }
 
