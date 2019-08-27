@@ -38,7 +38,7 @@ namespace FinancialControl.API.Controllers
 
         [HttpGet]
         [Route("costs/currency")]
-        public async Task<IActionResult> GetOperationCostsByCurrency(string categoryId, string currencyCode)
+        public async Task<IActionResult> GetTransactionCostsByCurrency(string categoryId, string currencyCode)
         {
             if (categoryId == null || currencyCode == null || !Guid.TryParse(categoryId, out Guid guid)) return BadRequest();
 

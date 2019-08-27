@@ -16,7 +16,7 @@ namespace FinancialControl.BL.DI
             var mapper = Mapper.Get();
             services.AddSingleton(mapper);
 
-            services.AddTransient<IOperationService, OperationService>();
+            services.AddTransient<ITransactionService, TransactionService>();
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IUserManager, UserManager>();
 

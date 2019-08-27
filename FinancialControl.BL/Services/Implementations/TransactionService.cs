@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace FinancialControl.BL.Services.Implementations
 {
-    public class OperationService : IOperationService
+    public class TransactionService : ITransactionService
     {
         private readonly IUnitOfWork _uow;
         private readonly IMapper _mapper;
         private readonly ICategoryService _categoryService;
 
-        public OperationService(
+        public TransactionService(
             IUnitOfWork uow, 
             IMapper mapper,
             ICategoryService categoryService
@@ -27,17 +27,17 @@ namespace FinancialControl.BL.Services.Implementations
             _categoryService = categoryService;
         }
 
-        public async Task<IEnumerable<OperationBO>> GetAll(Guid categoryId)
+        public async Task<IEnumerable<TransactionBO>> GetAll(Guid categoryId)
         {
             var category = await _categoryService.GetByIdAsync(categoryId);
 
-            return category?.Operations;
+            return category?.Transactions;
         }
 
-        public async Task<OperationBO> GetByIdAsync(Guid id)
+        public async Task<TransactionBO> GetByIdAsync(Guid id)
         {
-            var entity = (await _uow.OperationRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();
-            return entity != null ? _mapper.Map<OperationBO>(entity) : null;
+            var entity = (await _uow.TransactionRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();
+            return entity != null ? _mapper.Map<TransactionBO>(entity) : null;
         }
 
         public async Task CreateAsync(string name, decimal cost, string currencyCode, Guid categoryId)
@@ -46,7 +46,7 @@ namespace FinancialControl.BL.Services.Implementations
             if (category == null) return;
 
             var entity = _mapper.Map<Category>(category);
-            entity.Operations.ToList().Add(new Operation
+            entity.Transactions.ToList().Add(new Transaction
             {
                 Name = name,
                 Cost = cost,
@@ -58,18 +58,18 @@ namespace FinancialControl.BL.Services.Implementations
 
         public async Task RenameAsync(Guid id, string name)
         {
-            var entity = (await _uow.OperationRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();
+            var entity = (await _uow.TransactionRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();
             if (entity != null)
             {
                 entity.Name = name;
-                await _uow.OperationRepository.UpdateAsync(entity);
+                await _uow.TransactionRepository.UpdateAsync(entity);
             }
         }
 
         public async Task DeleteAsync(Guid id)
         {
-            var entity = (await _uow.OperationRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();
-            await _uow.OperationRepository.DeleteAsync(entity);
+            var entity = (await _uow.TransactionRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();
+            await _uow.TransactionRepository.DeleteAsync(entity);
         }
     }
 }

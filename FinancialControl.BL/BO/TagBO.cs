@@ -3,17 +3,15 @@ using System.Collections.Generic;
 
 namespace FinancialControl.BL.BO
 {
-    public class CategoryBO
+    public class TagBO
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public CategoryBO ParentCategory { get; set; }
-        public IEnumerable<CategoryBO> Subcategories { get; set; }
+
         public IEnumerable<TransactionBO> Transactions { get; set; }
 
-        public CategoryBO()
+        public TagBO()
         {
-            Subcategories = new List<CategoryBO>();
             Transactions = new List<TransactionBO>();
         }
     }

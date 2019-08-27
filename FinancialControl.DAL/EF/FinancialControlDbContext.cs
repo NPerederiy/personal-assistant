@@ -29,7 +29,9 @@ namespace FinancialControl.DAL.EF
         }
 
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Operation> Operations { get; set; }
+        public virtual DbSet<Transaction> Transactions { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Currency> Currencies { get; set; }
+        public virtual DbSet<Tag> Tags { get; set; }
     }
 }

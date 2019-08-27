@@ -83,13 +83,13 @@ namespace FinancialControl.BL.Services.Implementations
             var category = _mapper.Map<CategoryBO>(entity);
             decimal totalCosts = 0;
 
-            CalcOperationCosts(category, totalCosts);
+            CalcTransactionCosts(category, totalCosts);
 
             return totalCosts;
 
-            void CalcOperationCosts(CategoryBO cat, decimal sum)
+            void CalcTransactionCosts(CategoryBO cat, decimal sum)
             {
-                foreach (var op in cat.Operations)
+                foreach (var op in cat.Transactions)
                 {
                     if (op.Currency.ISO_4217_Code == currencyCode)
                         sum += op.Cost;
@@ -97,7 +97,7 @@ namespace FinancialControl.BL.Services.Implementations
 
                 foreach (var c in cat.Subcategories)
                 {
-                    CalcOperationCosts(c, sum);
+                    CalcTransactionCosts(c, sum);
                 }
             }
         }

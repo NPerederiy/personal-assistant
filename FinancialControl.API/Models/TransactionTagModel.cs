@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinancialControl.API.Models
 {
-    public class RenameOperationModel
+    public class TransactionTagModel
     {
         [Required]
-        [JsonProperty("operationId")]
+        [JsonProperty("transactionId")]
         public string Id { get; set; }
 
         [Required]
-        [JsonProperty("newName")]
-        public string Name { get; set; }
+        [JsonProperty("tag")]
+        public string Tag { get; set; }
     }
 }

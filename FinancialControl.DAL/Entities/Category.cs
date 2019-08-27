@@ -10,12 +10,12 @@ namespace FinancialControl.DAL.Entities
 
         public virtual Category ParentCategory { get; set; }
         public virtual IEnumerable<Category> Subcategories { get; set; }
-        public virtual IEnumerable<Operation> Operations { get; set; }
+        public virtual IEnumerable<Transaction> Transactions { get; set; }
 
         public Category()
         {
             Subcategories = new List<Category>();
-            Operations = new List<Operation>();
+            Transactions = new List<Transaction>();
         }
     }
 }

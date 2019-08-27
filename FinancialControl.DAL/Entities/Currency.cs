@@ -8,11 +8,11 @@ namespace FinancialControl.DAL.Entities
         public string ISO_4217_Code { get; set; }
         public string ISO_4217_Number { get; set; }
 
-        public virtual IEnumerable<Operation> Operations { get; set; }
+        public virtual IEnumerable<Transaction> Transactions { get; set; }
 
         public Currency()
         {
-            Operations = new List<Operation>();
+            Transactions = new List<Transaction>();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FinancialControl.API.Models
 {
-    public class AddOperationModel
+    public class AddTransactionModel
     {
         [Required]
         [JsonProperty("categoryId")]
@@ -23,6 +23,6 @@ namespace FinancialControl.API.Models
 
         //public string Time { get; set; }   -- TODO: Implement
 
-        //public string[] Markers { get; set; }   -- TODO: Implement
+        //public string[] Tags { get; set; }   -- TODO: Implement
     }
 }

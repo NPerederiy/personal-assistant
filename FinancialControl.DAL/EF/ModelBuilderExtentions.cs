@@ -23,12 +23,12 @@ namespace FinancialControl.DAL.EF
                  .WithOne(c => c.ParentCategory)
                  .OnDelete(DeleteBehavior.Restrict);
 
-                b.HasMany(c => c.Operations)
+                b.HasMany(c => c.Transactions)
                  .WithOne(o => o.Category)
                  .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<Operation>(b =>
+            modelBuilder.Entity<Transaction>(b =>
             {
                 b.HasKey(o => o.Id);
 
@@ -55,10 +55,31 @@ namespace FinancialControl.DAL.EF
                  .HasMaxLength(3)
                  .IsRequired();
 
-                b.HasMany(c => c.Operations)
+                b.HasMany(c => c.Transactions)
                  .WithOne(o => o.Currency)
                  .HasForeignKey(o => o.CurrencyCode)
                  .OnDelete(DeleteBehavior.SetNull);
+            });
+
+            modelBuilder.Entity<Tag>(b =>
+            {
+                b.HasKey(t => t.Id);
+
+                b.Property(t => t.Name)
+                 .IsRequired();
+            });
+
+            modelBuilder.Entity<TransactionTags>(b => 
+            {
+                b.HasKey(t => new { t.TransactionId, t.TagId });
+
+                b.HasOne(t => t.Tag)
+                 .WithMany(t => t.TransactionTags)
+                 .HasForeignKey(t => t.TagId);
+
+                b.HasOne(t => t.Transaction)
+                 .WithMany(t => t.TransactionTags)
+                 .HasForeignKey(t => t.TransactionId);
             });
         }
 

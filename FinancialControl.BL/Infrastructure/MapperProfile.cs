@@ -8,13 +8,15 @@ namespace FinancialControl.BL.Infrastructure
     {
         public MapperProfile()
         {
-            CreateMap<Operation, OperationBO>();
+            CreateMap<Transaction, TransactionBO>();
             CreateMap<Category, CategoryBO>();
-            CreateMap<User, UserBO>();
+            CreateMap<User, UserBO>(); // TODO: Add manual mapping of tags
+            CreateMap<Tag, TagBO>();
 
-            CreateMap<OperationBO, Operation>();
+            CreateMap<TransactionBO, Transaction>();
             CreateMap<CategoryBO, Category>();
-            CreateMap<UserBO, User>();
+            CreateMap<UserBO, User>(); // TODO: Add manual mapping of tags
+            CreateMap<TagBO, Tag>();
         }
     }
 }
