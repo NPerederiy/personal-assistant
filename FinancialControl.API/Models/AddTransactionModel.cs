@@ -23,8 +23,8 @@ namespace FinancialControl.API.Models
         public string CurrencyCode { get; set; }
 
         [Required]
-        [JsonProperty("commitedAt")]
-        public DateTime CommitedAt { get; set; }
+        [JsonProperty("committedAt")]
+        public DateTime CommittedAt { get; set; }
 
         [Required]
         [JsonProperty("tags")]

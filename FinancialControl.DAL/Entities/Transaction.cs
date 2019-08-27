@@ -8,7 +8,7 @@ namespace FinancialControl.DAL.Entities
         public Guid Id { get; set; }
         public string Name { get; set; }
         public decimal Cost { get; set; }
-        public DateTime CommitedAt { get; set; }
+        public DateTime CommittedAt { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
         public string CurrencyCode { get; set; }

@@ -56,7 +56,7 @@ namespace FinancialControl.BL.Services.Implementations
                 CurrencyCode = currencyCode,
                 CreatedAt = createdAt,
                 UpdatedAt = createdAt,
-                CommitedAt = commitedAt,
+                CommittedAt = commitedAt,
             };
 
             category.Transactions.ToList().Add(transaction);

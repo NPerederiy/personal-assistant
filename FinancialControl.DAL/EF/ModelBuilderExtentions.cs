@@ -39,7 +39,7 @@ namespace FinancialControl.DAL.EF
                  .HasColumnType("decimal(18, 2)")
                  .IsRequired();
 
-                b.Property(o => o.CommitedAt)
+                b.Property(o => o.CommittedAt)
                  .HasColumnType("datetime2")
                  .IsRequired();
 
