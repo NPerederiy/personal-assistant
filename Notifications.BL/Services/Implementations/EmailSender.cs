@@ -7,12 +7,17 @@ namespace Notifications.BL.Services.Implementations
     public class EmailSender : IEmailSender
     {
         private readonly SmtpClient _client;
-        private readonly string _sender = "tasktrackingsyst@gmail.com";
-        private readonly string _signature = "Your personal assistant";
+        private readonly string _sender;
+        private readonly string _signature;
 
-        public EmailSender(SmtpClient smtpClient)
+        public EmailSender(
+            SmtpClient smtpClient,
+            string senderEmail    
+        )
         {
             _client = smtpClient;
+            _sender = senderEmail;
+            _signature = "Your personal assistant";
         }
 
         public async Task SendMailAsync(string recipient, string subject, string message)
