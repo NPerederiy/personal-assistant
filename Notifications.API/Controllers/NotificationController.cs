@@ -13,10 +13,15 @@ namespace Notifications.API.Controllers
     public class NotificationController : ControllerBase
     {
         private readonly IEmailSender _emailSender;
+        private readonly ISmsSender _smsSender;
 
-        public NotificationController(IEmailSender emailSender)
+        public NotificationController(
+            IEmailSender emailSender,
+            ISmsSender smsSender
+        )
         {
             _emailSender = emailSender;
+            _smsSender = smsSender;
         }
 
         [HttpPost]
@@ -26,6 +31,17 @@ namespace Notifications.API.Controllers
             if (!ModelState.IsValid) return BadRequest();
 
             await _emailSender.SendMailAsync(model.Recipient, model.Subject, model.Message);
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("sms")]
+        public async Task<IActionResult> SendSms([FromBody] SendSmsModel model)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            await _smsSender.SendSmsAsync(model.Recipient, model.Message);
 
             return Ok();
         }

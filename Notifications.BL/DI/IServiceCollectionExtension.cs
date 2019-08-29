@@ -4,17 +4,18 @@ using Notifications.BL.Services.Abstractions;
 using Notifications.BL.Services.Implementations;
 using System.Net;
 using System.Net.Mail;
+using Twilio.Clients;
 
 namespace Notifications.BL.DI
 {
     public static class IServiceCollectionExtension
     {
-        public static IServiceCollection AddBusinessLogicLayer(this IServiceCollection services)
+        public static IServiceCollection AddBusinessLogicLayer(this IServiceCollection services, IConfiguration config)
         {
+            var senderPhone = config.GetValue<string>("Twilio:SenderPhone");
+
             services.AddTransient((serviceProvider) =>
             {
-                var config = serviceProvider.GetRequiredService<IConfiguration>();
-
                 return new SmtpClient()
                 {
                     Host = config.GetValue<string>("Email:Smtp:Host"),
@@ -28,6 +29,9 @@ namespace Notifications.BL.DI
                 };
             });
             services.AddTransient<IEmailSender, EmailSender>();
+
+            services.AddHttpClient<ITwilioRestClient, CustomTwilioClient>();
+            services.AddTransient<ISmsSender>(x => { return ActivatorUtilities.CreateInstance<SmsSender>(x, senderPhone); });
 
             return services;
         }
