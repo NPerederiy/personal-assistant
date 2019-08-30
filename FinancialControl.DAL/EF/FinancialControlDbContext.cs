@@ -33,5 +33,7 @@ namespace FinancialControl.DAL.EF
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Currency> Currencies { get; set; }
         public virtual DbSet<Tag> Tags { get; set; }
+        public virtual DbSet<SingleCurrencyAccount> SingleCurrencyAccounts { get; set; }
+        public virtual DbSet<MultiCurrencyAccount> MultiCurrencyAccounts { get; set; }
     }
 }

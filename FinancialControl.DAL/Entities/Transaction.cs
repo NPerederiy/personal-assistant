@@ -14,6 +14,7 @@ namespace FinancialControl.DAL.Entities
         public string CurrencyCode { get; set; }
         public virtual Currency Currency { get; set; }
         public virtual Category Category { get; set; }
+        public virtual SingleCurrencyAccount Account { get; set; }
         public virtual IEnumerable<TransactionTags> TransactionTags { get; set; }
 
         public Transaction()

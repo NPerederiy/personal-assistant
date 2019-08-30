@@ -9,10 +9,12 @@ namespace FinancialControl.DAL.Entities
         public string ISO_4217_Number { get; set; }
 
         public virtual IEnumerable<Transaction> Transactions { get; set; }
-
+        public virtual IEnumerable<SingleCurrencyAccount> SingleCurrencyAccounts { get; set; }
+        
         public Currency()
         {
             Transactions = new List<Transaction>();
+            SingleCurrencyAccounts = new List<SingleCurrencyAccount>();
         }
     }
 }

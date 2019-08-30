@@ -10,6 +10,12 @@ namespace FinancialControl.DAL.EF
             modelBuilder.Entity<User>(b =>
             {
                 b.HasKey(u => u.Id);
+
+                b.HasMany(u => u.SingleCurrencyAccounts)
+                 .WithOne(a => a.Owner);
+
+                b.HasMany(u => u.MultiCurrencyAccounts)
+                 .WithOne(a => a.Owner);
             });
 
             modelBuilder.Entity<Category>(b =>
@@ -93,6 +99,38 @@ namespace FinancialControl.DAL.EF
                 b.HasOne(t => t.Transaction)
                  .WithMany(t => t.TransactionTags)
                  .HasForeignKey(t => t.TransactionId)
+                 .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<SingleCurrencyAccount>(b =>
+            {
+                b.HasKey(a => a.Id);
+
+                b.Property(a => a.Name)
+                 .IsRequired();
+
+                b.Property(a => a.Balance)
+                 .HasColumnType("decimal(18, 2)")
+                 .IsRequired();
+
+                b.HasOne(a => a.Currency)
+                 .WithMany(c => c.SingleCurrencyAccounts)
+                 .OnDelete(DeleteBehavior.SetNull);
+
+                b.HasMany(a => a.TransactionHistory)
+                 .WithOne(t => t.Account)
+                 .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            modelBuilder.Entity<MultiCurrencyAccount>(b =>
+            {
+                b.HasKey(a => a.Id);
+
+                b.Property(a => a.Name)
+                 .IsRequired();
+
+                b.HasMany(a => a.Accounts)
+                 .WithOne(a => a.MultiCurrencyAccount)
                  .OnDelete(DeleteBehavior.Cascade);
             });
         }
