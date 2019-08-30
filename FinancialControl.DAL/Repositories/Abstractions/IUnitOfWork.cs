@@ -9,5 +9,7 @@ namespace FinancialControl.DAL.Repositories.Abstractions
         IRepository<Transaction> TransactionRepository { get; }
         IRepository<Currency> CurrencyRepository { get; }
         IRepository<Tag> TagRepository { get; }
+        IRepository<SingleCurrencyAccount> ScaRepository { get; }
+        IRepository<MultiCurrencyAccount> McaRepository { get; }
     }
 }
