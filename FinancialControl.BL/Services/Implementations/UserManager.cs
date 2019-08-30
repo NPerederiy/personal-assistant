@@ -42,6 +42,12 @@ namespace FinancialControl.BL.Services.Implementations
             return _mapper.Map<UserBO>(user);
         }
 
+        public async Task<UserBO> GetUserAsync(Guid id)
+        {
+            var entity = await _uow.UserRepository.GetByConditionAsync(x => x.Id == id);
+            return entity != null ? _mapper.Map<UserBO>(entity) : null;
+        }
+
         public async Task DeleteUserAsync(Guid id)
         {
             var user = (await _uow.UserRepository.GetByConditionAsync(x => x.Id == id)).FirstOrDefault();

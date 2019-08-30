@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FinancialControl.BL.BO;
+using FinancialControl.BL.Extensions;
 using FinancialControl.DAL.Entities;
 using System.Collections.Generic;
 
@@ -15,6 +16,9 @@ namespace FinancialControl.BL.Infrastructure
             CreateMap<User, UserBO>();
             CreateMap<Tag, TagBO>()
                 .ForMember(o => o.Transactions, obj => obj.MapFrom(o => GetTransactions(o.TransactionTags)));
+            CreateMap<SingleCurrencyAccount, SingleCurrencyAccountBO>()
+                .ForMember(o => o.CardType, obj => obj.MapFrom(o => o.CardType.ToBankCardTypeEnum()));
+            CreateMap<MultiCurrencyAccount, MultiCurrencyAccountBO>();
 
             CreateMap<TransactionBO, Transaction>()
                 .ForMember(o => o.TransactionTags, obj => obj.MapFrom(o => GetTransactionTags(o)));
@@ -22,6 +26,9 @@ namespace FinancialControl.BL.Infrastructure
             CreateMap<UserBO, User>();
             CreateMap<TagBO, Tag>()
                 .ForMember(o => o.TransactionTags, obj => obj.MapFrom(o => GetTransactionTags(o)));
+            CreateMap<SingleCurrencyAccountBO, SingleCurrencyAccount>()
+                .ForMember(o => o.CardType, obj => obj.MapFrom(o => o.CardType.GetName()));
+            CreateMap<MultiCurrencyAccountBO, MultiCurrencyAccountBO>();
         }
 
         private HashSet<TransactionTags> GetTransactionTags(TransactionBO transaction)

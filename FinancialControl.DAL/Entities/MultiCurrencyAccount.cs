@@ -10,7 +10,7 @@ namespace FinancialControl.DAL.Entities
         public virtual User Owner { get; set; }
         public virtual IEnumerable<SingleCurrencyAccount> Accounts { get; set; }
 
-        public MultiCurrencyAccount() : base()
+        public MultiCurrencyAccount()
         {
             Accounts = new List<SingleCurrencyAccount>();
         }

@@ -7,11 +7,11 @@ namespace FinancialControl.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly IUserManager _userManager;
 
-        public AccountController(IUserManager userManager)
+        public UserController(IUserManager userManager)
         {
             _userManager = userManager;
         }

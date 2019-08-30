@@ -13,6 +13,7 @@ namespace FinancialControl.BL.BO
         public DateTime UpdatedAt { get; set; }
         public CurrencyBO Currency { get; set; }
         public CategoryBO Category { get; set; }
+        public SingleCurrencyAccountBO Account { get; set; }
         public IEnumerable<TagBO> Tags { get; set; }
 
         public TransactionBO()
