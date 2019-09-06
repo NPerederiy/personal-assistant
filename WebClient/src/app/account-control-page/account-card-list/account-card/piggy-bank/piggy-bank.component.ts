@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PiggyBankAccount } from 'src/shared/models/piggy-bank-account.model';
 
 @Component({
   selector: 'app-piggy-bank',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./piggy-bank.component.scss']
 })
 export class PiggyBankComponent implements OnInit {
+  @Input() account: PiggyBankAccount;
 
   constructor() { }
 

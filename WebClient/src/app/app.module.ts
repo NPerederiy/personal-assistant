@@ -14,6 +14,8 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MainMenuButtonComponent } from './main-menu/main-menu-button/main-menu-button.component';
 import { IncomeControlPageComponent } from './income-control-page/income-control-page.component';
 import { CostControlPageComponent } from './cost-control-page/cost-control-page.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,12 @@ import { CostControlPageComponent } from './cost-control-page/cost-control-page.
     MainMenuComponent,
     MainMenuButtonComponent,
     IncomeControlPageComponent,
-    CostControlPageComponent
+    CostControlPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

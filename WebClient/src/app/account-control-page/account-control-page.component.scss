@@ -1,0 +1,15 @@
+@import "src/shared/styles/global-variables.scss";
+
+#container{
+    background: $background-light;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+app-account-card-list{
+    background: $background-light-gray;
+    min-width: $bank-card-width+$bank-card-margin*2;
+    max-width: 420px;
+    height: 100%;
+}

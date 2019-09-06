@@ -1,0 +1,43 @@
+/* --- common --- */
+
+$regular-font: sans-serif;
+$background-light: #fff;
+$background-light-gray: #f6f6f6;
+
+/* --- bank card style --- */
+
+$bank-card-margin: 5px;
+$bank-card-width: 336px;
+$bank-card-height: 232px*0.9;
+$bank-card-shadow: 0 0 8px #4c4c4c;
+$bank-card-border-radius: 10px;
+$monobank-card-background: rgb(19, 19, 19);
+$bank-card-background-opacity: 0.25;
+$bank-card-plain-text-color: #fff;
+$bank-card-content-margin-y: 25px;
+$bank-card-content-margin-x: 30px;
+$bank-card-name-font-size: 11pt;
+$bank-card-plain-text-size: 9pt;
+$bank-card-balance-font-size: 16pt;
+$bank-card-number-font-size: 10pt;
+$bank-card-currency-color: #06bec3;
+$bank-card-list-shadow: -4px 0 8px 0px #4c4c4c;
+
+/* --- scrollbar style --- */
+
+$scrollbar-width: 5px;
+$scrollbar-background: transparent;
+$scrollbar-thumb-color: rgba(#000, 0.2);
+$scrollbar-thumb-border-radius: 10px;
+$scrollbar-thumb-transition: visibility 5s;
+$scrollbar-track-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+
+/* --- func button style --- */
+
+$func-button-width: 50px;
+$func-button-height: 50px;
+$func-button-text: #fff;
+$func-button-background: brown;
+$func-button-border-radius: 25px;
+$func-button-hover-shadow: 0 0 5px rgb(255, 115, 115);
+$func-button-transition: all 0.5;

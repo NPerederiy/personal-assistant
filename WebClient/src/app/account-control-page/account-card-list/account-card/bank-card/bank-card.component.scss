@@ -1,0 +1,52 @@
+@import "src/shared/styles/global-variables.scss";
+@import "src/shared/styles/base64-icons.scss";
+
+#container{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    .background{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: $bank-card-background-opacity;
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-image: $payment-system-mastercard-172;
+    }
+
+    .balance, .card-details{
+        margin: 0 $bank-card-content-margin-x;
+    }
+
+    .balance{
+        margin-top: $bank-card-content-margin-y*2+20px;
+
+        .currency, .int, .coins{
+            display: inline;
+            font-size: $bank-card-balance-font-size;
+        }
+        .currency{
+            color: $bank-card-currency-color;
+            margin-right: 0.4em;
+        }
+        .plain-text{
+            font-size: $bank-card-plain-text-size;
+        }
+        .int{
+            display: none;
+        }
+    }
+    
+    .card-details{
+        margin-bottom: $bank-card-content-margin-y;
+
+        .card-number, .valid-thru{
+            font-size: $bank-card-number-font-size;
+        }
+    }       
+}

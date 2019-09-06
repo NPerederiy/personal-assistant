@@ -1,1 +1,12 @@
-<p>piggy-bank works!</p>
+<div id='container'>
+    <div class="background"></div>
+    <div class="balance">
+        <div class="plain-text">Balance</div>
+        <ng-container *ngFor="let b of account.balances | slice:0:3; let j = index">
+            <div class="currency">{{ b.currencyCode }}</div>
+            <div class="int">{{ b.getBalanceWithoutCoins() }}</div>
+            <div class="coins">{{ b.getBalanceWithCoins() }}</div>
+            <br />
+        </ng-container>
+    </div>
+</div>

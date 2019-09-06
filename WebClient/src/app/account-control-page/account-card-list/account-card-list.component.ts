@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AccountCard } from 'src/shared/models/account-card.model';
 
 @Component({
   selector: 'app-account-card-list',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account-card-list.component.scss']
 })
 export class AccountCardListComponent implements OnInit {
+  @Input() accounts: AccountCard[];
 
   constructor() { }
 

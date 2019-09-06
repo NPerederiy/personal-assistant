@@ -1,1 +1,12 @@
-<p>bank-account works!</p>
+<div id='container'>
+    <div class="background"></div>
+    <div class="balance">
+        <div class="plain-text">Balance</div>
+        <div class="currency">{{ account.accountBalance.currencyCode }}</div>
+        <div class="int">{{ account.accountBalance.getBalanceWithoutCoins() }}</div>
+        <div class="coins">{{ account.accountBalance.getBalanceWithCoins() }}</div>
+    </div>
+    <div class="card-details">
+        <div class="card-number">{{ account.accountNumber }}</div>
+    </div>
+</div>
