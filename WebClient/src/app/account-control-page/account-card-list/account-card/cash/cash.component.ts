@@ -12,6 +12,9 @@ export class CashComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.account.balances.length > 3);
+    console.log(this.account.balances.length);
+    
   }
 
 }

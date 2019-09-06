@@ -8,17 +8,6 @@
     flex-direction: column;
     justify-content: space-between;
     
-    .background{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        opacity: $bank-card-background-opacity;
-        background-size: contain;
-        background-position: right;
-        background-repeat: no-repeat;
-        background-image: $paper-money-172;
-    }
-
     .balance{
         margin: 0 $bank-card-content-margin-x;
     }
@@ -41,4 +30,29 @@
             display: none;
         }
     }     
+
+    .button-more{
+        height: $bank-card-balance-font-size;
+        width: 45px;
+        background-image: $arrow-down-172;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        &:hover{
+            opacity: 0.8;
+            cursor: pointer;
+        }
+    }
+}
+
+.background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: $bank-card-background-opacity;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: $paper-money-172;
 }

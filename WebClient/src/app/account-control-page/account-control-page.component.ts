@@ -53,7 +53,10 @@ export class AccountControlPageComponent implements OnInit {
         "Cash", 
         [
           new AccountBalance("UAH", 1407),
-          new AccountBalance("RUB", 32.1451)
+          new AccountBalance("RUB", 32.1451),
+          new AccountBalance("UAH", 17000.14124),
+          new AccountBalance("RUB", 635.00),
+          new AccountBalance("HUF", 42.80124)
         ]
       ),
       new BankAccount(

@@ -1,5 +1,5 @@
+<div class="background"></div>
 <div id='container'>
-    <div class="background"></div>
     <div class="balance">
         <div class="plain-text">Balance</div>
         <ng-container *ngFor="let b of account.balances | slice:0:3; let j = index">
@@ -8,5 +8,6 @@
             <div class="coins">{{ b.getBalanceWithCoins() }}</div>
             <br />
         </ng-container>
+        <div class="button-more" *ngIf="account.balances.length > 3"></div>
     </div>
 </div>
