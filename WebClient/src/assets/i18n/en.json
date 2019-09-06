@@ -1,0 +1,18 @@
+{
+    "Common":{
+        "Buttons":{
+            "Add" : "Add"
+        }
+    },
+    "AccountControl":{
+        "Account":{
+            "Balance" : "Balance"
+        }
+    },
+    "IncomeControl":{
+
+    },
+    "CostControl":{
+
+    }
+}
