@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  openProfilePopup(){
+    // TODO: implement
+    console.log("open Profile popup");
+  }
+
+  navigateToAccounts(){
+    this.router.navigateByUrl('/accounts');
+  }
+
+  navigateToIncomes(){
+    this.router.navigateByUrl('/incomes');
+  }
+
+  navigateToCosts(){
+    this.router.navigateByUrl('/costs');
+  }
 }
