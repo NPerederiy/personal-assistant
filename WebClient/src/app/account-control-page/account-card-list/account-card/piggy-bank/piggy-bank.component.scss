@@ -48,7 +48,7 @@
 
 .background{
     position: absolute;
-    height: 100%;
+    height: $bank-card-height;
     width: 100%;
     opacity: $bank-card-background-opacity;
     background-size: contain;
