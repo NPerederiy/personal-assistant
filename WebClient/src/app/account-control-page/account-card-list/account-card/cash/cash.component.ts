@@ -8,13 +8,15 @@ import { CashAccount } from 'src/shared/models/cash-account.model';
 })
 export class CashComponent implements OnInit {
   @Input() account: CashAccount;
+  showMoreCurrencies: boolean;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.account.balances.length > 3);
-    console.log(this.account.balances.length);
-    
+    this.showMoreCurrencies = false;
   }
 
+  changeDisplayedCurrenciesCounts(){
+    this.showMoreCurrencies = !this.showMoreCurrencies;
+  }
 }

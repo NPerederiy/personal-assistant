@@ -8,6 +8,19 @@
             <div class="coins">{{ b.getBalanceWithCoins() }}</div>
             <br />
         </ng-container>
-        <div class="button-more" *ngIf="account.balances.length > 3"></div>
+        <ng-container *ngIf="showMoreCurrencies">
+            <ng-container *ngFor="let b of account.balances | slice:3; let j = index">
+                <div class="currency">{{ b.currencyCode }}</div>
+                <div class="int">{{ b.getBalanceWithoutCoins() }}</div>
+                <div class="coins">{{ b.getBalanceWithCoins() }}</div>
+                <br />
+            </ng-container>
+        </ng-container>
+        <div 
+            class="button-more" 
+            *ngIf="account.balances.length > 3" 
+            (click)="changeDisplayedCurrenciesCounts()"
+            [ngClass]="showMoreCurrencies?'rotated':''"
+        ></div>
     </div>
 </div>

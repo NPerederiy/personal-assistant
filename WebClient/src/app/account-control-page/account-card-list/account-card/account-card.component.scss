@@ -7,12 +7,16 @@
     font-family: $regular-font;
     color: $bank-card-plain-text-color;
     width: $bank-card-width;
-    height: $bank-card-height;
+    min-height: $bank-card-height;
     border-radius: $bank-card-border-radius;
     box-shadow: $bank-card-shadow;
     background-repeat: no-repeat;
     background-position: right;
     background-blend-mode: soft-light;
+
+    app-piggy-bank, app-cash{
+        display: contents;
+    }
 }
 
 .card-name{

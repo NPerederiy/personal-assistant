@@ -8,10 +8,17 @@ import { PiggyBankAccount } from 'src/shared/models/piggy-bank-account.model';
 })
 export class PiggyBankComponent implements OnInit {
   @Input() account: PiggyBankAccount;
+  showMoreCurrencies: boolean;
 
-  constructor() { }
+  constructor() { 
+    this.showMoreCurrencies = false;
+  }
 
   ngOnInit() {
+  }
+
+  changeDisplayedCurrenciesCounts(){
+    this.showMoreCurrencies = !this.showMoreCurrencies;
   }
 
 }
