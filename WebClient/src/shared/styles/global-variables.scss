@@ -1,9 +1,8 @@
 /* --- common --- */
 
-
 $app-color1: #e66465;
 $app-color2: #9198e5;
-$app-color3: #b83e74;//#a52a2a;
+$app-color3: #b83e74;
 $app-color4: #06bec3;
 
 $regular-font: sans-serif;
@@ -14,6 +13,7 @@ $background-light: #fff;
 $background-light-gray: #f6f6f6;
 $gradient-background: linear-gradient(217deg, $app-color1, $app-color2);
 $border-radius: 25px;
+$border-radius2: 10px;
 
 /* --- authentication page --- */
 
@@ -45,6 +45,11 @@ $networks-google-color3: #fbbc05;
 $networks-google-color4: #ea4335;
 $networks-google-color5: #fff;
 $networks-twitter-color: #1dcaff;
+
+/* --- account control page ---*/
+
+$account-page-component-shadow: 0 0 8px #cccccc;
+$account-page-component-margin: 7.5px;
 
 /* --- bank card style --- */
 

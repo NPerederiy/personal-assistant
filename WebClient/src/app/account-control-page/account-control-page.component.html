@@ -1,7 +1,9 @@
 <div id="container">
-    <app-main-menu></app-main-menu>
     <app-account-card-list [accounts]="accounts"></app-account-card-list>
-    <div>
-        <p>account-control-page works!</p>
+    <div class="content">
+        <app-account-balance-chart class="chart incomes"></app-account-balance-chart>
+        <app-account-balance-chart class="chart costs"></app-account-balance-chart>
+        <app-transaction-history class="transaction-history"></app-transaction-history>
     </div>
 </div>
+<app-main-menu></app-main-menu>

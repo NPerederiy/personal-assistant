@@ -1,0 +1,9 @@
+@import "src/shared/styles/global-variables.scss";
+
+#container{
+    background-color: $background-light;
+    box-shadow: $account-page-component-shadow;
+    border-radius: $border-radius2;
+    height: 100%;
+    width: 100%;
+}

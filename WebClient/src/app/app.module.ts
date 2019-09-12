@@ -20,6 +20,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { AccountBalanceChartComponent } from './account-balance-chart/account-balance-chart.component';
+import { TransactionHistoryComponent } from './account-control-page/transaction-history/transaction-history.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { LoginComponent } from './login/login.component';
     IncomeControlPageComponent,
     CostControlPageComponent,
     LoginComponent,
+    AccountBalanceChartComponent,
+    TransactionHistoryComponent,
   ],
   imports: [
     BrowserModule,
