@@ -1,0 +1,180 @@
+@import "src/shared/styles/global-variables.scss";
+@import "src/shared/styles/base64-icons.scss";
+
+#container{
+    height: 100%;
+    width: 100%;
+    background-color: $auth-page-background-color;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    color: $font-color-light;
+    font-family: $regular-font;
+
+    .form{
+        z-index: 1;
+        display: grid;
+        position: relative;
+        border-radius: $border-radius;
+        background: $auth-form-background;
+        box-shadow: $auth-page-shadow;
+
+        .navigation{
+            position: absolute;
+            display: flex;
+            left: 0;
+            top: -60px;
+            height: 40px;
+        }
+
+        .content{
+            position: relative;
+            margin: 20px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .input{
+                width: -webkit-fill-available;
+                height: 30px;
+                padding: 0 15px;
+                margin: 10px 0 25px;
+                border: none;
+                border-radius: 15px;
+                background-color: rgba($background-light, 0.35);
+                color: #fff;
+                font-size: 11pt;
+            
+                &.password{
+                    letter-spacing: 2px;
+                    font-family: monospace;
+                }
+                &:focus {
+                    outline-width: 0;
+                }
+            }
+        }
+
+        .button{
+            cursor: pointer;
+            padding: 0 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+
+            &.login{
+                margin-right: 4px;
+            }
+            &.login, &.sign-up{
+                color: $app-color1;
+
+                &.active{
+                    background: $auth-form-background;
+                    box-shadow: $auth-page-shadow;
+                    color: $font-color-light;
+                }
+            }
+            &.forgot{
+                color: $app-color2;
+                height: 30px;
+                border-radius: 15px;
+                padding: 0 40px;
+                margin-top: 30px;
+                background-color: $background-light-gray;
+            
+                &:hover{
+                    color: $app-color1;
+                    transition: color 0.2s;
+                }
+            }
+            &.next{
+                position: absolute;
+                bottom: -60px;
+                height: 40px;
+                right: 0;
+                padding: 0 25px;
+                background: $auth-form-background;
+                box-shadow: $auth-page-shadow;
+            }
+            &.social-network{
+                display: inline-flex;
+                height: 100%;
+                width: 40px;
+                padding: 0;
+                margin-right: 20px;
+                box-shadow: $auth-page-shadow;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                &.google{
+                    background-color: $networks-google-color5;
+                    background-size: 80%;
+                    background-image: $networks-google-background-172;
+
+                    &:hover{
+                        box-shadow: $networks-google-shadow-active;
+                    }
+                }
+                &.facebook{
+                    background-size: 110%;
+                    background-image: $networks-facebook-background-172;
+                
+                    &:hover{
+                        box-shadow: $networks-facebook-shadow-active;
+                    }
+                }
+                &.twitter{
+                    background-size: 100%;
+                    background-image: $networks-twitter-background-172;
+                
+                    &:hover{
+                        box-shadow: $networks-twitter-shadow-active;
+                    }
+                }
+            }
+            &.login, &.sign-up{
+                height: 100%;
+                border-radius: 20px;
+            }
+            &.next, &.social-network{
+                border-radius: 20px;
+            }
+
+            &:hover{
+                box-shadow: $auth-page-shadow-active;
+                transition: box-shadow 0.3s;
+            }
+        }
+
+        .social-networks{
+            position: absolute;
+            bottom: -60px;
+            height: 40px;
+        }
+    }
+    
+    #shape1{
+        left: 0;
+        top: 0;
+        width: 45%;
+        height: 40%;
+        border-bottom-right-radius: 100%;
+    }
+
+    #shape2{
+        right: 0;
+        bottom: 0;
+        width: 40%;
+        height: 45%;
+        border-top-left-radius: 100%;
+    }
+
+    #shape1, #shape2{
+        position: absolute;
+        background-color: $auth-page-shapes-color;
+        box-shadow: $auth-page-shadow;
+    }
+}

@@ -1,8 +1,44 @@
 /* --- common --- */
 
 $regular-font: sans-serif;
+$font-color-light: #fff;
+$font-color-dark: #000;
 $background-light: #fff;
 $background-light-gray: #f6f6f6;
+$app-color1: #e66465;
+$app-color2: #9198e5;
+$border-radius: 25px;
+
+/* --- authentication page --- */
+
+$auth-page-background-color: $background-light-gray;
+$auth-form-background: linear-gradient(217deg, $app-color1, $app-color2);;
+$auth-page-shapes-color: $background-light;
+$auth-page-shadow: -5px 5px 32px #9b9b9b;
+$auth-page-shadow-active: -5px 5px 32px $app-color1;
+$networks-facebook-shadow-active:
+0px -15px 20px -5px rgba(66, 133, 243, 0.6),
+0px 15px 20px -5px rgba(66, 133, 243, 0.6), 
+15px 0px 15px -5px rgba(66, 133, 243, 0.6), 
+-15px 0px 15px -5px rgba(66, 133, 243, 0.5);
+$networks-google-shadow-active: 
+0px -15px 20px -5px  rgba(#ea4335, 0.5), /* top */
+0px  15px  20px -5px  rgba(#34a853, 0.5), /* bottom */
+15px  0px  15px -5px  rgba(#4285f3, 0.5), /* right */
+-15px  0px  15px -5px  rgba(#fbbc05, 0.5);
+$networks-twitter-shadow-active:
+0px -15px 20px -5px rgba(29, 202, 255, 0.6),
+0px 15px 20px -5px rgba(29, 202, 255, 0.6), 
+15px 0px 15px -5px rgba(29, 202, 255, 0.6), 
+-15px 0px 15px -5px rgba(29, 202, 255, 0.5);
+
+$networks-facebook-color: #3b5998;
+$networks-google-color1: #4285f3;
+$networks-google-color2: #34a853;
+$networks-google-color3: #fbbc05;
+$networks-google-color4: #ea4335;
+$networks-google-color5: #fff;
+$networks-twitter-color: #1dcaff;
 
 /* --- bank card style --- */
 
@@ -38,6 +74,6 @@ $func-button-width: 50px;
 $func-button-height: 50px;
 $func-button-text: #fff;
 $func-button-background: brown;
-$func-button-border-radius: 25px;
+$func-button-border-radius: $border-radius;
 $func-button-hover-shadow: 0 0 5px rgb(255, 115, 115);
 $func-button-transition: all 0.5;
