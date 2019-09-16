@@ -28,8 +28,7 @@
             "ComponentName" : "Transaction history",
             "Description" : "Description",
             "Account" : "Account",
-            "In" : "In",
-            "Out" : "Out",
+            "Changes" : "Changes",
             "Date" : "Date"
         },
         "Filters":{

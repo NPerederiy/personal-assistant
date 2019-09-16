@@ -64,7 +64,7 @@
 
     .column-headers{
         display: grid;
-        grid-template-columns: 2fr repeat(5, 1fr);
+        grid-template-columns: 2fr repeat(4, 1fr);
         padding: 0 $account-page-component-margin*2;
         border-bottom: 1px solid $background-light-gray;
 

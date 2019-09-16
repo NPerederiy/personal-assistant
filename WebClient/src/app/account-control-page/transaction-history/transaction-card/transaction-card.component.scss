@@ -5,12 +5,12 @@
     height: 100%;
     padding: $account-page-component-margin $account-page-component-margin*2;
     display: grid;
-    grid-template-columns: 2fr repeat(5, 1fr);
+    grid-template-columns: 2fr repeat(4, 1fr);
     border-bottom: 1px solid $background-light-gray;
     font-size: 11pt;
     
     .item{
         display: flex;
-        align-items: center;
+        flex-direction: column;
     }
 }

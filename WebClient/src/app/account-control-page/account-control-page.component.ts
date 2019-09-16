@@ -7,6 +7,7 @@ import { CashAccount } from 'src/shared/models/cash-account.model';
 import { AccountBalance } from 'src/shared/models/account-balance.model';
 import { BankAccount } from 'src/shared/models/bank-account.model';
 import { Transaction } from 'src/shared/models/transaction.model';
+import { AccountChanges } from 'src/shared/models/account-changes.model';
 
 @Component({
   selector: 'app-account-control-page',
@@ -73,146 +74,122 @@ export class AccountControlPageComponent implements OnInit {
     this.transactionHistory.push(
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       ),
       new Transaction(
         "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
-        "09.13.2019"
-      ),
-      new Transaction(
-        "[Bank] Curency exchange",
-        cash_account,
-        "UAH",
-        9878.20,
-        "USD",
-        400.00,
+        [
+          new AccountChanges(cash_account, -400.00, "USD"),
+          new AccountChanges(cash_account, 9878.20, "UAH"),
+        ],
         "09.13.2019"
       )
     );

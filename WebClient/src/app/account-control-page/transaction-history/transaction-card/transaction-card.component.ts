@@ -18,16 +18,16 @@ export class TransactionCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  getBalanceByCurrency(currencyCode: string){
-    if (this.transaction.account instanceof CashAccount){
+  // getBalanceByCurrency(currencyCode: string){
+  //   if (this.transaction.account instanceof CashAccount){
       
-    } else if (this.transaction.account instanceof BankCard){
+  //   } else if (this.transaction.account instanceof BankCard){
       
-    } else if (this.transaction.account instanceof BankAccount){
+  //   } else if (this.transaction.account instanceof BankAccount){
       
-    } else if (this.transaction.account instanceof PiggyBankAccount){
+  //   } else if (this.transaction.account instanceof PiggyBankAccount){
       
-    }
+  //   }
     
-  }
+  // }
 }

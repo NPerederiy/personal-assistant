@@ -1,11 +1,20 @@
 <div id="container">
     <div class="item descr">{{ transaction.description }}</div>
-    <div class="item account">{{ transaction.account.name }}</div>
-    <div class="item in">{{ transaction.debitCurrency }} {{ transaction.debitValue | money }}</div>
-    <div class="item out">{{ transaction.creditCurrency }} {{ transaction.creditValue | money }}</div>
+    <div class="item account">
+        <div *ngFor="let i of transaction.accountChanges">
+            {{ i.account.name }}
+        </div>
+    </div>
+    <div class="item changes">
+        <div *ngFor="let i of transaction.accountChanges">
+            {{ i.changesCurrency }} <span [ngStyle]="i.changesValue < 0 ? {'color': '#ea4335'} : {'color': '#34a853'}">{{ i.changesValue | money }}</span>
+        </div>
+    </div>
     <div class="item balance">
-        {{ transaction.debitCurrency }} {{ transaction.debitValue | money }}<br/>
-        {{ transaction.creditCurrency }} {{ transaction.creditValue | money }}
+        <div *ngFor="let i of transaction.accountChanges">
+            <!-- {{ i.account.balance }} TODO: Get new balance --> 
+            USD {{ 0 | money }}
+        </div>
     </div>
     <div class="item date">{{ transaction.date }}</div>
 </div>
