@@ -6,7 +6,7 @@ html, body {
   margin: 0;
 
   div.v-scroll{
-    overflow-y: auto;
+    overflow-y: overlay;
 
     &::-webkit-scrollbar {
         width: $scrollbar-width;
