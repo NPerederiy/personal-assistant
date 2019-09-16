@@ -1,0 +1,11 @@
+<div id="container">
+    <div class="item descr">{{ transaction.description }}</div>
+    <div class="item account">{{ transaction.account.name }}</div>
+    <div class="item in">{{ transaction.debitCurrency }} {{ transaction.debitValue | money }}</div>
+    <div class="item out">{{ transaction.creditCurrency }} {{ transaction.creditValue | money }}</div>
+    <div class="item balance">
+        {{ transaction.debitCurrency }} {{ transaction.debitValue | money }}<br/>
+        {{ transaction.creditCurrency }} {{ transaction.creditValue | money }}
+    </div>
+    <div class="item date">{{ transaction.date }}</div>
+</div>

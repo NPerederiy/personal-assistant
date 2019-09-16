@@ -23,6 +23,18 @@
     "AccountControl":{
         "Account":{
             "Balance" : "Balance"
+        },
+        "TransactionHistory":{
+            "ComponentName" : "Transaction history",
+            "Description" : "Description",
+            "Account" : "Account",
+            "In" : "In",
+            "Out" : "Out",
+            "Date" : "Date"
+        },
+        "Filters":{
+            "ComponentName" : "Filters",
+            "FilterBy" : "Filter by"
         }
     },
     "IncomeControl":{

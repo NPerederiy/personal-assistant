@@ -22,6 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { AccountBalanceChartComponent } from './account-balance-chart/account-balance-chart.component';
 import { TransactionHistoryComponent } from './account-control-page/transaction-history/transaction-history.component';
+import { TransactionCardComponent } from './account-control-page/transaction-history/transaction-card/transaction-card.component';
+import { RoundingMoneyPipe } from 'src/shared/pipes/rounding-money.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { TransactionHistoryComponent } from './account-control-page/transaction-
     LoginComponent,
     AccountBalanceChartComponent,
     TransactionHistoryComponent,
+    TransactionCardComponent,
+    RoundingMoneyPipe
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,10 @@ import { TransactionHistoryComponent } from './account-control-page/transaction-
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  })
+    })
+  ],
+  exports:[
+    RoundingMoneyPipe
   ],
   providers: [],
   bootstrap: [AppComponent]

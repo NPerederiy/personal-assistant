@@ -3,7 +3,7 @@
 #container{
     height: 100%;
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: $account-page-account-list-width 1fr;
     background: $background-light-gray;
     
     .chart{
@@ -25,7 +25,7 @@
     .content{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 270px 1fr;
+        grid-template-rows: $account-page-chart-height 1fr;
         column-gap: $account-page-component-margin*2;
         row-gap: $account-page-component-margin*2;
         padding: $bank-card-margin*4 $account-page-component-margin;

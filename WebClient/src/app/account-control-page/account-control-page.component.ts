@@ -6,6 +6,7 @@ import { PiggyBankAccount } from 'src/shared/models/piggy-bank-account.model';
 import { CashAccount } from 'src/shared/models/cash-account.model';
 import { AccountBalance } from 'src/shared/models/account-balance.model';
 import { BankAccount } from 'src/shared/models/bank-account.model';
+import { Transaction } from 'src/shared/models/transaction.model';
 
 @Component({
   selector: 'app-account-control-page',
@@ -14,10 +15,23 @@ import { BankAccount } from 'src/shared/models/bank-account.model';
 })
 export class AccountControlPageComponent implements OnInit {
   accounts: AccountCard[] = [];
+  transactionHistory: Transaction[] = [];
   
   constructor() {
 
+    let cash_account = new CashAccount(
+      "Cash", 
+      [
+        new AccountBalance("UAH", 1407),
+        new AccountBalance("RUB", 32.1451),
+        new AccountBalance("UAH", 17000.14124),
+        new AccountBalance("RUB", 635.00),
+        new AccountBalance("HUF", 42.80124)
+      ]
+    );
+
     this.accounts.push(
+      cash_account,
       new BankCard(
         "monobank | Universal Bank", 
         "5375 4141 0000 0000", 
@@ -26,18 +40,23 @@ export class AccountControlPageComponent implements OnInit {
         new AccountBalance("UAH",6054.124903)
       ),
       new BankCard(
-        "PrivatBank",
-        "5168 7573 6971 7758", 
-        "05 / 22", 
-        PaymentSystem.visa, 
-        new AccountBalance("UAH",864.17924)
-      ),
-      new BankCard(
         "UKRSIBBANK",
         "5351 2801 0000 0000", 
         "06 / 22", 
         PaymentSystem.mastercard, 
         new AccountBalance("UAH")
+      ),
+      new BankAccount(
+        "UKRSIBBANK UAH",
+        "UA0000000000000000000000000",
+        new AccountBalance("UAH", 651.488)
+      ),
+      new BankCard(
+        "PrivatBank",
+        "5168 7573 6971 7758", 
+        "05 / 22", 
+        PaymentSystem.visa, 
+        new AccountBalance("UAH",864.17924)
       ),
       new PiggyBankAccount(
         "Piggy bank", 
@@ -48,21 +67,153 @@ export class AccountControlPageComponent implements OnInit {
           new AccountBalance("RUB", 635.00),
           new AccountBalance("HUF", 42.80124)
         ]
+      )
+    );
+
+    this.transactionHistory.push(
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
       ),
-      new CashAccount(
-        "Cash", 
-        [
-          new AccountBalance("UAH", 1407),
-          new AccountBalance("RUB", 32.1451),
-          new AccountBalance("UAH", 17000.14124),
-          new AccountBalance("RUB", 635.00),
-          new AccountBalance("HUF", 42.80124)
-        ]
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
       ),
-      new BankAccount(
-        "UKRSIBBANK UAH",
-        "UA0000000000000000000000000",
-        new AccountBalance("UAH", 651.488)
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
+      ),
+      new Transaction(
+        "[Bank] Curency exchange",
+        cash_account,
+        "UAH",
+        9878.20,
+        "USD",
+        400.00,
+        "09.13.2019"
       )
     );
   }

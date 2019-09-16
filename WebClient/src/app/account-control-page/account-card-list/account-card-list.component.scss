@@ -47,19 +47,19 @@
     }
 }
 
-.v-scroll{
-    overflow-y: auto;
+// .v-scroll{
+//     overflow-y: auto;
 
-    &::-webkit-scrollbar {
-        width: $scrollbar-width;
-        background-color: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-        overflow: overlay;
-        background-color: $scrollbar-thumb-color;
-        border-radius: $scrollbar-thumb-border-radius;
-    }
-}
+//     &::-webkit-scrollbar {
+//         width: $scrollbar-width;
+//         background-color: transparent;
+//     }
+//     &::-webkit-scrollbar-thumb {
+//         overflow: overlay;
+//         background-color: $scrollbar-thumb-color;
+//         border-radius: $scrollbar-thumb-border-radius;
+//     }
+// }
 
 // .cover-bar {
 //     position: absolute;
