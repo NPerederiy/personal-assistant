@@ -4,15 +4,15 @@
         <div class="plain-text">{{ "AccountControl.Account.Balance" | translate }}</div>
         <ng-container *ngFor="let b of account.balances | slice:0:3; let j = index">
             <div class="currency">{{ b.currencyCode }}</div>
-            <div class="int">{{ b.getBalanceWithoutCoins() }}</div>
-            <div class="coins">{{ b.getBalanceWithCoins() }}</div>
+            <div class="int">{{ b.balance | money:0 }}</div>
+            <div class="coins">{{ b.balance | money }}</div>
             <br />
         </ng-container>
         <ng-container *ngIf="showMoreCurrencies">
             <ng-container *ngFor="let b of account.balances | slice:3; let j = index">
                 <div class="currency">{{ b.currencyCode }}</div>
-                <div class="int">{{ b.getBalanceWithoutCoins() }}</div>
-                <div class="coins">{{ b.getBalanceWithCoins() }}</div>
+                <div class="int">{{ b.balance | money:0 }}</div>
+                <div class="coins">{{ b.balance | money }}</div>
                 <br />
             </ng-container>
         </ng-container>

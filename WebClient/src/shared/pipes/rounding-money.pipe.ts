@@ -4,8 +4,14 @@ import { Pipe, PipeTransform } from '@angular/core';
     name: 'money'
 })
 export class RoundingMoneyPipe implements PipeTransform {
-  transform(value: number): string {
-    return this.gaussRound(value, 2).toFixed(2);
+  transform(value: number, accuracy?: number): string {
+    if (isNaN(accuracy)){
+        return this.gaussRound(value, 2).toFixed(2);
+    } else if (accuracy === 0){
+        return Math.trunc(value).toFixed(0);
+    } else {
+        return this.gaussRound(value, accuracy).toFixed(accuracy);
+    }    
   }
 
   private gaussRound(num: number, decimalPlaces: number) {
