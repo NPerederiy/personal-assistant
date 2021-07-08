@@ -1,0 +1,22 @@
+<div id="container">
+    <div class="sticked">
+        <div class="header">
+            <div class="component-name">{{ "AccountControl.TransactionHistory.ComponentName" | translate | uppercase }}</div>
+            <div class="toggle-filters" (click)="toggleFilters()">{{ "AccountControl.Filters.ComponentName" | translate }}<div class="button-more" [ngClass]="displayFilters?'rotated':''"></div></div>
+        </div>
+        <div class="filters">
+            <div class="plain-text">{{ "AccountControl.Filters.FilterBy" | translate }}</div>
+            <div class="dropdown">__account_type__</div>
+        </div>
+        <div class="column-headers">
+            <div class="column descr">{{ "AccountControl.TransactionHistory.Description" | translate | uppercase }}</div>
+            <div class="column account">{{ "AccountControl.TransactionHistory.Account" | translate | uppercase }}</div>
+            <div class="column changes">{{ "AccountControl.TransactionHistory.Changes" | translate | uppercase }}</div>
+            <div class="column balance">{{ "AccountControl.Account.Balance" | translate | uppercase }}</div>
+            <div class="column date">{{ "AccountControl.TransactionHistory.Date" | translate | uppercase }}</div>
+        </div>
+    </div>
+    <div class="transactions v-scroll">
+        <app-transaction-card class="transaction" *ngFor="let t of transactions" [transaction]="t"></app-transaction-card>      
+    </div>
+</div>

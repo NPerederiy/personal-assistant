@@ -1,0 +1,53 @@
+<div id="container">
+    <div class="form">
+        <div class="navigation">
+            <div 
+                class="button login" 
+                [ngClass]="!isNewUser ? 'active' : ''" 
+                (click)="openSignIn()">{{ "Auth.Buttons.SignIn" | translate }}
+            </div>
+            <div 
+                class="button sign-up" 
+                [ngClass]="isNewUser ? 'active' : ''" 
+                (click)="openSignUp()">{{ "Auth.Buttons.SignUp" | translate }}
+            </div>    
+        </div>
+        <div class="content">
+            <ng-container *ngIf="!isNewUser; else reg">
+                <div class="inputs">
+                    <div>{{ "Auth.Labels.EmailOrPhone" | translate }}</div>
+                    <input type="text" class="input">
+                    <div>{{ "Auth.Labels.Password" | translate }}</div>
+                    <input type="password" class="input password">
+                </div>
+                <div class="button forgot">{{ "Auth.Buttons.ForgotPassword" | translate }}</div>
+            </ng-container>
+            <ng-template #reg>
+                <div class="inputs">
+                    <div>{{ "Auth.Labels.Email" | translate }}</div>
+                    <input type="text" class="input">
+                    <div>{{ "Auth.Labels.Phone" | translate }}</div>
+                    <input type="text" class="input">
+                    <div>{{ "Auth.Labels.Password" | translate }}</div>
+                    <input type="password" class="input password">
+                    <div>{{ "Auth.Labels.ConfirmPassword" | translate }}</div>
+                    <input type="password" class="input password">
+                </div>
+            </ng-template>
+        </div>
+        <div class="social-networks">
+            <div class="button social-network facebook"></div>
+            <div class="button social-network twitter"></div>
+            <div class="button social-network google"></div>
+        </div>
+        <ng-container *ngIf="!isNewUser; else regButton">
+            <div class="button next" (click)="submit()">{{ "Auth.Buttons.Confirm" | translate }}</div>
+        </ng-container>
+        <ng-template #regButton>
+            <div class="button next" (click)="submit()">{{ "Auth.Buttons.Confirm" | translate }}</div>
+        </ng-template>
+        
+    </div>
+    <!-- <div id="shape1"></div>
+    <div id="shape2"></div> -->
+</div>

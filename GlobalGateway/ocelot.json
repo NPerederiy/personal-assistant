@@ -1,0 +1,17 @@
+{
+  "GlobalConfiguration": { },
+  // Financial control service
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/{catchAll}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45024
+        }
+      ],
+      "UpstreamPathTemplate": "/finances/{catchAll}"
+    }
+  ]
+}

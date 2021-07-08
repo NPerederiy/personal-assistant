@@ -1,0 +1,7 @@
+<div id='container'>
+    <div class="add-button">{{ "Common.Buttons.Add" | translate }}</div>
+    <div class="card-list v-scroll">
+        <app-account-card class="account-card" *ngFor="let a of accounts" [account]="a"></app-account-card>
+    </div>
+    <!-- <div class="cover-bar"></div> -->
+</div>

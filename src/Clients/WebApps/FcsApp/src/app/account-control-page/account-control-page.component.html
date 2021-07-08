@@ -1,0 +1,9 @@
+<div id="container">
+    <app-account-card-list [accounts]="accounts"></app-account-card-list>
+    <div class="content">
+        <app-account-balance-chart class="chart incomes"></app-account-balance-chart>
+        <app-account-balance-chart class="chart costs"></app-account-balance-chart>
+        <app-transaction-history class="transaction-history" [transactions]="transactionHistory"></app-transaction-history>
+    </div>
+</div>
+<app-main-menu></app-main-menu>

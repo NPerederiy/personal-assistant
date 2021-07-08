@@ -1,0 +1,26 @@
+<div class="background"></div>
+<div id='container'>
+    <div class="balance">
+        <div class="plain-text">{{ "AccountControl.Account.Balance" | translate }}</div>
+        <ng-container *ngFor="let b of account.balances | slice:0:3">
+            <div class="currency">{{ b.currencyCode }}</div>
+            <div class="int">{{ b.balance | money:0 }}</div>
+            <div class="coins">{{ b.balance | money }}</div>
+            <br />
+        </ng-container>
+        <ng-container *ngIf="showMoreCurrencies">
+            <ng-container *ngFor="let b of account.balances | slice:3; let j = index">
+                <div class="currency">{{ b.currencyCode }}</div>
+                <div class="int">{{ b.balance | money:0 }}</div>
+                <div class="coins">{{ b.balance | money }}</div>
+                <br />
+            </ng-container>
+        </ng-container>
+        <div 
+            class="button-more" 
+            *ngIf="account.balances.length > 3" 
+            (click)="changeDisplayedCurrenciesCounts()"
+            [ngClass]="showMoreCurrencies?'rotated':''"
+        ></div>
+    </div>
+</div>

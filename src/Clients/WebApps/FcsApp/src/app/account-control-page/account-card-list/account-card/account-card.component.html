@@ -1,0 +1,7 @@
+<div id='container'>
+    <div class="card-name">{{ account.name }}</div>
+    <app-bank-account class="account-content" [account]="account" *ngIf="IsBankAccount(); else bc"></app-bank-account>
+    <app-bank-card class="account-content" [account]="account" *ngIf="IsBankCard(); else pb" #bc></app-bank-card>
+    <app-piggy-bank class="account-content" [account]="account" *ngIf="IsPiggyBank(); else ca" #pb></app-piggy-bank>
+    <app-cash class="account-content" [account]="account" *ngIf="IsCash()" #ca></app-cash>
+</div>

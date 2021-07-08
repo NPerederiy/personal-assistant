@@ -1,0 +1,93 @@
+@import "src/shared/styles/global-variables.scss";
+@import "src/shared/styles/base64-icons.scss";
+
+#container{
+    height: 100%;
+    width: 100%;    
+    background-color: $background-light;
+    box-shadow: $account-page-component-shadow;
+    border-radius: $border-radius2;
+    font-family: $regular-font;
+    .sticked{
+        position: sticky;
+        top: 0px;
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $account-page-component-margin*2;
+
+        .component-name, .toggle-filters{
+            color: $app-color4;
+        }
+
+        .toggle-filters{
+            display: flex;
+            align-items: center;
+            user-select: none;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        .button-more{
+            height: $bank-card-balance-font-size;
+            width: 30px;
+            background-image: $arrow-down-aqua-172;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            &:hover{
+                cursor: pointer;
+            }
+            &.rotated{
+                transform: rotate(180deg);
+                transition: all 0.5s;
+            }
+        }
+    }
+
+    .filters{
+        // display: flex;
+        padding: $account-page-component-margin $account-page-component-margin*2;
+        height: 25px;
+        display: none;
+        
+        .dropdown{
+            margin: 0 $account-page-component-margin;
+        }
+    }
+
+    .column-headers{
+        display: grid;
+        grid-template-columns: 2fr repeat(4, 1fr);
+        padding: 0 $account-page-component-margin*2;
+        border-bottom: 1px solid $background-light-gray;
+
+        .column{
+            display: flex;
+            align-items: center;
+            min-height: 2em;
+            font-size: 11pt;
+        }
+    }
+
+    .transactions{
+        // 412.5px = $account-page-chart-height         // 270px
+        //         + $bank-card-margin*8                // 40px
+        //         + $account-page-component-margin*3   // 22.5px
+        //         + component name height              // 51px
+        //         + column headers                     // 29px
+        max-height: calc(100vh - 412.5px);
+
+        &.filters-opened{
+            // 452.5px = 412.5px
+            //         + filters block height           // 40px
+            max-height: calc(100vh - 452.5px);
+        }
+    }
+}

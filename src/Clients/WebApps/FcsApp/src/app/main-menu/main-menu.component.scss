@@ -1,0 +1,49 @@
+@import "src/shared/styles/global-variables.scss";
+@import "src/shared/styles/base64-icons.scss";
+
+#container{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .button{
+        margin-bottom: 15px;
+        background-color: $app-color3;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &.profile{
+            width: 70px;
+            height: 70px;
+            border-radius: 35px;
+            background-size: 50px;
+            background-image: $profile-icon-172;
+        }
+
+        &.nav{
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-size: 30px;
+
+            &.accounts{
+                background-image: $accounts-icon-172;
+            }
+            &.income{
+                background-image: $income-icon-172;
+            }
+            &.costs{
+                background-image: $costs-icon-172;
+            }
+        }
+
+        &:hover{
+            cursor: pointer;
+            box-shadow: $func-button-hover-shadow;
+            transition: $func-button-transition;
+        }
+    }
+}

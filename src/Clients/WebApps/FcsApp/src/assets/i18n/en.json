@@ -1,0 +1,45 @@
+{
+    "Common":{
+        "Buttons":{
+            "Add" : "Add"
+        }
+    },
+    "Auth":{
+        "Buttons":{
+            "SignIn" : "Sign in",
+            "SignUp" : "Sign Up",
+            "ForgotPassword" : "Forgot password",
+            "Confirm" : "Confirm"
+        },
+        "Labels":{
+            "Email" : "Email",
+            "Phone" : "Mobile phone",
+            "EmailOrPhone" : "Email or mobile phone",
+            "Password" : "Password",
+            "ConfirmPassword" : "Confirm password"
+        }
+        
+    },
+    "AccountControl":{
+        "Account":{
+            "Balance" : "Balance"
+        },
+        "TransactionHistory":{
+            "ComponentName" : "Transaction history",
+            "Description" : "Description",
+            "Account" : "Account",
+            "Changes" : "Changes",
+            "Date" : "Date"
+        },
+        "Filters":{
+            "ComponentName" : "Filters",
+            "FilterBy" : "Filter by"
+        }
+    },
+    "IncomeControl":{
+
+    },
+    "CostControl":{
+
+    }
+}

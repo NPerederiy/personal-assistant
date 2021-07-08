@@ -1,0 +1,12 @@
+<div class="background"></div>
+<div id='container'>
+    <div class="balance">
+        <div class="plain-text">{{ "AccountControl.Account.Balance" | translate }}</div>
+        <div class="currency">{{ account.accountBalance.currencyCode }}</div>
+        <div class="int">{{ account.accountBalance.balance | money:0 }}</div>
+        <div class="coins">{{ account.accountBalance.balance | money }}</div>
+    </div>
+    <div class="card-details">
+        <div class="card-number">{{ account.accountNumber }}</div>
+    </div>
+</div>
